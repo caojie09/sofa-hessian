@@ -200,20 +200,20 @@ public class PersonTest {
             assertEquals(null, p2.getListValue());
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println(Thread.currentThread().getName() + " current WriteDefinitionEverytimeField to "
-                    + WRITE_DEFINITION_EVERYTIME_FIELD.get(null));
+            System.out.println(Thread.currentThread().getName() + " current WriteDefinitionEverytimeField value is "
+                + WRITE_DEFINITION_EVERYTIME_FIELD.get(null));
             throw e;
         }
-        
+
     }
-    
-    private void setWriteDefinitionEverytimeField(boolean write){
+
+    private void setWriteDefinitionEverytimeField(boolean write) {
         try {
             System.out.println(Thread.currentThread().getName() + " setWriteDefinitionEverytimeField to " + write);
             WRITE_DEFINITION_EVERYTIME_FIELD.set(GenericObjectSerializer.class, write);
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         }
-    } 
-    
+    }
+
 }

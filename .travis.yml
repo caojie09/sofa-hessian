@@ -21,6 +21,7 @@ before_install:
 
 install:
   - mvn clean install -DskipTests=true -Dmaven.javadoc.skip=true -B -U -e
+  - javap -v -c -p ./target/classes/com/alipay/hessian/generic/io/GenericObjectSerializer.class
   
 script:
   - sh ./check_format.sh
